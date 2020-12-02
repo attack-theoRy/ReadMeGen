@@ -4,36 +4,41 @@ const inquirer = require('inquirer')
 // for file i/o
 const fs=require('fs')
 
-const inquirer = require('inquirer');
-const fs = require('fs');
+
 //Your application should prompt the user for information like their name, location, bio, LinkedIn URL, and GitHub URL. Feel free to add any additional prompts you think of.
 inquirer
   .prompt([
     {
       type: 'input',
-      message: "What's your name?",
-      name: 'name',
+      message: "What's the title of you project?",
+      name: 'title',
     },
     {
       type: 'input',
-      message: "What's your location?",
-      name: 'location',
+      message: "Write a description for your project",
+      name: 'description',
     },
     {
       type: 'input',
-      message: 'Please describe yourself in a brief Bio',
-      name: 'Bio',
+      message: 'Write out Installation instructions',
+      name: 'install',
     },
     {
         type: 'input',
-        message: 'What is your LinkedIn URL?',
-        name: 'LinkedIn',
+        message: 'Explain how this will be used',
+        name: 'usage',
       },
       {
         type: 'input',
-        message: 'What is your GitHUb URL',
-        name: 'GitHub',
+        message: 'How can people contribute?',
+        name: 'contribute',
       },
+      {
+          type: 'input',
+          message: 'If your application has tests, say how to use them here',
+          name: 'test'
+      }
+
   ])
   .then((response)=> {
     console.log(response)
