@@ -36,34 +36,48 @@ inquirer
       {
           type: 'input',
           message: 'If your application has tests, say how to use them here',
-          name: 'test'
-      }
+          name: 'test',
+      },
+      {
+        type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'gitHubUser',
+      },
+      {
+        type: 'input',
+        message:'What is your email address?',
+        name:'email',
+      },
+      {
+        type:'list',
+        name: 'license',
+        message: "What kind of license",
+        choices: [
+          'MIT',
+          'GNU',
+
+        ]      }
+
 
   ])
   .then((response)=> {
     console.log(response)
-    const fileName = `${response.name.toLowerCase().split(' ').join('')}.html`
-    let html = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container">
-            <div class="jumbotron">
-              <h1>User Info</h1>      
-              <p></p>
-        <p id='name'>Name:${response.name} </p>
-        <p id='location'>Location:${response.location} </p>
-        <p id='bio'>Bio:${response.Bio} </p>
-        <p id='linkedIn'>LinkedIn URL:${response.LinkedIn} </p>
-        <p id='gitHub'>GitHub URL:${response.GitHub}</p>
-    </div>
-    </div>
-    </body>
-    </html>`
-    fs.writeFile(fileName, html, (err) => err ? console.log(err) : console.log('yay'))
+    const fileName = "ReadME.md"
+    let readContents = `#${response.title}
+    ##Description:
+    ${response.description}
+    ## Table of contents
+    * [Description](#description)
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [License](#license)
+    * [Contributing](#contribute)
+    * [Tests](#tests)
+    * [Questions](#questions)
+    
+    ##Installation
+      ${response.install}
+    
+`
+    fs.writeFile(fileName, readContents, (err) => err ? console.log(err) : console.log('We did it!'))
     })
