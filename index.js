@@ -62,10 +62,14 @@ inquirer
   ])
   .then((response)=> {
     console.log(response)
+
     const fileName = "ReadME.md"
+    var profile = ("https://github.com/"+response.gitHubUser)
     let readContents = `#${response.title}
     ##Description:
     ${response.description}
+    
+    
     ## Table of contents
     * [Description](#description)
     * [Installation](#installation)
@@ -77,6 +81,23 @@ inquirer
     
     ##Installation
       ${response.install}
+
+      ##Usage
+      ${response.usage}
+
+      ##License
+      ${response.license}
+
+      ##Contributing
+      ${response.contribute}
+
+      ##Tests
+      ${response.test}
+
+      ##Questions
+      For questions please contact: ${response.email}
+      Github Profile: ${profile}
+
     
 `
     fs.writeFile(fileName, readContents, (err) => err ? console.log(err) : console.log('We did it!'))
