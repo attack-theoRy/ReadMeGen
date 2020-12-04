@@ -90,42 +90,42 @@ inquirer
     var profile = "https://github.com/"+response.gitHubUser
     
     // create the total contents for the readME
-    let readContents = `#${response.title}
+    let readContents = `# ${response.title}
     
-    ##Description:
+    ## Description:
     ${response.description}
     
     
-    ## Table of contents
-    * [Description](#description)
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contribute)
-    * [Tests](#tests)
-    * [Questions](#questions)
+## Table of contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contribute)
+* [Tests](#tests)
+* [Questions](#questions)
     
-    ##Installation
-      ${response.install}
+## Installation
+${response.install}
 
-      ##Usage
-      ${response.usage}
+## Usage
+${response.usage}
 
-      ##License
-      ${response.license}
-      ${genLicense}
+## License
+${response.license}
+${genLicense}
 
-      ##Contributing
-      ${response.contribute}
+## Contributing
+${response.contribute}
 
-      ##Tests
-      ${response.test}
+## Tests
+${response.test}
 
-      ##Questions
-      For questions please contact: ${response.email}
-      Github Profile: ${profile}
+## Questions
+For questions please contact: ${response.email}
+Github Profile: ${profile} `
 
     
-`
+
     fs.writeFile(fileName, readContents, (err) => err ? console.log(err) : console.log('We did it!'))
     })
