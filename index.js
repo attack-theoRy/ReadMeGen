@@ -68,24 +68,19 @@ inquirer
     // set the license depending on what was chosen
     if(response.license == 'MIT')
     {
-      fs.readFile('MIT.txt', 'utf-8', function(err, data) {
-
-        response.license = data
-
-      });
+      genLicense = fs.readFileSync('MIT.txt', 'utf-8')
       
     }
     else if (response.license == 'GNU')
     {
       // Use fs.readFile() method to read the file 
-      fs.readFile('GNU.txt', 'utf8', function(err, data){ 
+      genLicense = fs.readFileSync('GNU.txt', 'utf8') 
       
-        response.license = data
+       // response.license = data
       
         // Display the file content 
      // console.log(data); 
-    }); 
-
+    
     }
 
     // set the variables for the readME
@@ -118,6 +113,7 @@ inquirer
 
       ##License
       ${response.license}
+      ${genLicense}
 
       ##Contributing
       ${response.contribute}
