@@ -63,9 +63,40 @@ inquirer
   .then((response)=> {
     console.log(response)
 
+    var genLicense
+
+    // set the license depending on what was chosen
+    if(response.license == 'MIT')
+    {
+      fs.readFile('MIT.txt', 'utf-8', function(err, data) {
+
+        response.license = data
+
+      });
+      
+    }
+    else if (response.license == 'GNU')
+    {
+      // Use fs.readFile() method to read the file 
+      fs.readFile('GNU.txt', 'utf8', function(err, data){ 
+      
+        response.license = data
+      
+        // Display the file content 
+     // console.log(data); 
+    }); 
+
+    }
+
+    // set the variables for the readME
     const fileName = "ReadME.md"
-    var profile = ("https://github.com/"+response.gitHubUser)
+
+    // set the profile for the readME
+    var profile = "https://github.com/"+response.gitHubUser
+    
+    // create the total contents for the readME
     let readContents = `#${response.title}
+    
     ##Description:
     ${response.description}
     
