@@ -90,7 +90,7 @@ const questions = [
     // create the total contents for the readME
     let readContents = `# ${response.title}
 
-${licenseBadge}
+This project is licensed under the ${licenseBadge}(#license) .
     
 ## Description:
 ${response.description}

@@ -1,9 +1,9 @@
-# shshshs
+# s
 
-<img src='https://img.shields.io/badge/license-GNU-blue.svg'>
+This project is licensed under the <img src='https://img.shields.io/badge/license-GNU-blue.svg'>(#license) .
     
 ## Description:
-skskms
+s
     
     
 ## Table of contents
@@ -16,10 +16,10 @@ skskms
 * [Questions](#questions)
     
 ## Installation
-ds
+s
 
 ## Usage
-sdf
+s
 
 ## License
 
@@ -700,12 +700,12 @@ Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 
 ## Contributing
-dfs
+s
 
 ## Tests
-dfs
+s
 
 ## Questions
-For questions please contact: dfs
+For questions please contact: s
 
-Github Profile: https://github.com/dsf 
+Github Profile: https://github.com/s 
