@@ -67,14 +67,14 @@ const questions = [
     if(response.license == 'MIT')
     {
       genLicense = fs.readFileSync('MIT.txt', 'utf-8')
-      response.license = `![GitHub license](https://img.shields.io/badge/license-${response.license}-blue.svg)`
+      licenseBadge = `<img src='https://img.shields.io/badge/license-${response.license}-blue.svg'>`
       
     }
     else if (response.license == 'GNU')
     {
       // Use fs.readFile() method to read the file 
       genLicense = fs.readFileSync('GNU.txt', 'utf8') 
-      response.license = `![GitHub license](https://img.shields.io/badge/license-${response.license}-blue.svg)`
+      licenseBadge = `<img src='https://img.shields.io/badge/license-${response.license}-blue.svg'>`
   
         // Display the file content 
      // console.log(data); 
@@ -82,7 +82,7 @@ const questions = [
     }
 
     // set the variables for the readME
-    const fileName = `${response.title}` + '.md'
+    const fileName = 'GeneratedReadMes\\ReadMe.md'
 
     // set the profile for the readME
     var profile = "https://github.com/"+response.gitHubUser
@@ -90,10 +90,10 @@ const questions = [
     // create the total contents for the readME
     let readContents = `# ${response.title}
 
-    ${response.license}
+${licenseBadge}
     
-    ## Description:
-    ${response.description}
+## Description:
+${response.description}
     
     
 ## Table of contents
@@ -128,9 +128,9 @@ Github Profile: ${profile} `
 
     
 
-    fs.writeFile(fileName, readContents, (err) => err ? console.log(err) : console.log('We did it!'))
-    })
+  fs.writeFile(fileName, readContents, (err) => err ? console.log(err) : console.log('We did it!'))
+  })
   }
 
-  // run it to generate readME
-  generate()
+// run it to generate readME
+generate()
