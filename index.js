@@ -8,7 +8,7 @@ const fs=require('fs')
 const questions = [
     {
       type: 'input',
-      message: "What's the title of you project?",
+      message: "What's the title of your project?",
       name: 'title',
     },
     {
@@ -23,7 +23,7 @@ const questions = [
     },
     {
       type: 'input',
-      message: 'Write out Installation instructions',
+      message: 'Write out installation instructions',
       name: 'install',
       default: 'npm init -y',
     },
