@@ -6,7 +6,7 @@ This project is licensed under the [![GNU License](https://img.shields.io/badge/
 s
     
     
-## Table of contents
+## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
