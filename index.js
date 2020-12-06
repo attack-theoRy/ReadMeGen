@@ -13,6 +13,11 @@ const questions = [
     },
     {
       type: 'input',
+      message: "Add your name to the ReadME",
+      name: 'author',
+    }
+    {
+      type: 'input',
       message: "Write a description for your project",
       name: 'description',
     },
@@ -35,6 +40,7 @@ const questions = [
           type: 'input',
           message: 'If your application has tests, say how to use them here',
           name: 'test',
+          default: 'npm test'
       },
       {
         type: 'input',
@@ -52,7 +58,8 @@ const questions = [
         message: "What kind of license",
         choices: [
           'MIT',
-          'GNU'
+          'GNU',
+          'None'
         ]      }
 
 
@@ -67,18 +74,23 @@ const questions = [
     if(response.license == 'MIT')
     {
       genLicense = fs.readFileSync('MIT.txt', 'utf-8')
-      licenseBadge = `<img src='https://img.shields.io/badge/license-${response.license}-blue.svg'>`
+      licenseBadge = `[![MIT License](https://img.shields.io/badge/license-${response.license}-blue.svg)](#license)`
       
     }
     else if (response.license == 'GNU')
     {
       // Use fs.readFile() method to read the file 
       genLicense = fs.readFileSync('GNU.txt', 'utf8') 
-      licenseBadge = `<img src='https://img.shields.io/badge/license-${response.license}-blue.svg'>`
+      
+      licenseBadge = `[![GNU License](https://img.shields.io/badge/license-${response.license}-blue.svg)](#license)`
   
         // Display the file content 
-     // console.log(data); 
-    
+    }
+    else if(response.license == 'None')
+    {
+      genLicense = 'No license specified'
+      licenseBadge = `[![GNU License](https://img.shields.io/badge/license-${response.license}-blue.svg)](#license)`
+
     }
 
     // set the variables for the readME
@@ -101,7 +113,7 @@ ${response.description}
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Contributing](#contribute)
+* [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
     
@@ -122,7 +134,8 @@ ${response.contribute}
 ${response.test}
 
 ## Questions
-For questions please contact: ${response.email}
+For questions please contact: ${response.author}
+at  ${response.email}
 
 Github Profile: ${profile} `
 
