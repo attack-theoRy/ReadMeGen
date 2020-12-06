@@ -23,7 +23,21 @@ GitHub Repo: [ReadME Repo](https://github.com/attack-theoRy/ReadMeGen)
 
 ## Description
 
-This app uses Node.js and the command line / terminal to create a professional ReadME. The app asks a bunch of questions to fill out the different sections of the  
+This app uses Node.js and the command line / terminal to create a professional ReadME. The app asks a bunch of questions to fill out the different sections of the readme. You first start out by typing Node.js in the terminal like below:
+
+![Begin](/img/startScreen.PNG)
+
+Then you fill out the question prompts and also choose which license you would like. There are default answers for a few of the prompts. 
+
+![Halfway](/img/halfwayScreen.PNG)
+
+Then when you are done with all the questions the terminal spits out your answers
+
+![Finished](/img/finishedScreen.PNG)
+
+And then finally the app creates a readME with a shield license logo at the top and a fully working Table of Contents with links and the pre-generated license text along with links to your gitHub user profile and whatever other information you gave. The ReadME is placed within the GeneratedReadMEs folder  
+
+![ReadME](/img/readMEScreen.PNG)
 
 ## Installation
 

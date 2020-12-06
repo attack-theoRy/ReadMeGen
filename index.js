@@ -15,7 +15,7 @@ const questions = [
       type: 'input',
       message: "Add your name to the ReadME",
       name: 'author',
-    }
+    },
     {
       type: 'input',
       message: "Write a description for your project",
@@ -25,6 +25,7 @@ const questions = [
       type: 'input',
       message: 'Write out Installation instructions',
       name: 'install',
+      default: 'npm init -y',
     },
     {
         type: 'input',
@@ -40,7 +41,7 @@ const questions = [
           type: 'input',
           message: 'If your application has tests, say how to use them here',
           name: 'test',
-          default: 'npm test'
+          default: 'npm test',
       },
       {
         type: 'input',
