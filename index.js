@@ -80,7 +80,7 @@ const questions = [
     }
     else if (response.license == 'GNU')
     {
-      // Use fs.readFile() method to read the file 
+      // Use fs.readFileSync() method to read the file 
       genLicense = fs.readFileSync('GNU.txt', 'utf8') 
       
       licenseBadge = `[![GNU License](https://img.shields.io/badge/license-${response.license}-blue.svg)](#license)`
